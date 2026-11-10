@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0e3b2e">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="ひと息ついて、牌をひと組。全50面の上海ソリティア。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e3b2e'/%3E%3Crect x='14' y='8' width='36' height='48' rx='5' fill='%23f7f1df'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-size='28' fill='%23b3261e'%3E中%3C/text%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <title>上海</title>
+</head>
+<body>
+  <main id="app">
+    <section id="stages-screen" class="screen" aria-labelledby="title">
+      <header class="lobby-header">
+        <div class="eyebrow">ひと息ついて、牌をひと組。</div>
+        <div class="title-row"><h1 id="title">上海</h1><div class="totals"><span id="clear-count"></span><span id="star-count" class="gold"></span></div></div>
+        <p class="intro">重なりをほどく、五十の景色。</p>
+        <button id="resume" class="primary" hidden></button>
+      </header>
+      <div class="stage-scroll"><div class="section-label">ステージを選ぶ <span>同じ絵柄をふたつずつ</span></div><div id="stage-grid" class="stage-grid"></div></div>
+      <footer class="lobby-footer">左右どちらかが空いた、上に牌のない組を探しましょう。</footer>
+    </section>
+    <section id="game-screen" class="screen" aria-label="ゲーム" hidden>
+      <header class="game-header">
+        <button id="back" class="icon-button" aria-label="ステージ選択へ">←</button>
+        <h2 id="stage-title"></h2>
+        <div class="game-stats"><span id="remaining"></span><time id="timer">00:00</time></div>
+        <button id="settings" class="icon-button" aria-label="設定"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></svg></button>
+      </header>
+      <div id="board-area"><div id="board" aria-label="麻雀牌の盤面"></div></div>
+      <nav class="game-footer" aria-label="ゲーム操作">
+        <button id="hint"><span>ヒント</span><small id="hint-count">0 回</small></button>
+        <button id="undo"><span>戻す</span><small>ひと組前へ</small></button>
+        <button id="shuffle"><span>シャッフル</span><small>並べ直す</small></button>
+        <button id="restart"><span>やり直し</span><small>最初から</small></button>
+      </nav>
+    </section>
+    <p id="notice" role="status" aria-live="polite"></p>
+  </main>
+  <dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet-content"><div class="sheet-handle" aria-hidden="true"></div><h2 id="sheet-title"></h2><div id="sheet-body"></div><div id="sheet-actions"></div></div></dialog>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
